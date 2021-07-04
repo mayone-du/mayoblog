@@ -1,9 +1,0 @@
-{
-  "schema": "http://localhost:8000/graphql/",
-  "documents": "src/apollo/graphql/**/*.graphql",
-  "generates": {
-    "src/apollo/schema.ts": {
-      "plugins": ["typescript", "typescript-operations", "typescript-react-apollo"]
-    }
-  }
-}
