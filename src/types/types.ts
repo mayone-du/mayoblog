@@ -3,9 +3,11 @@ export type Blog = {
   title: string;
   slug: string;
   description: string;
+  image: string;
   body: string;
   category: string;
   tags: string[] | [];
+  createdAt: string;
 };
 
 export type Blogs = {

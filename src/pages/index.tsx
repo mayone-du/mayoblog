@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { Layout } from "src/components/layouts/Layout";
-import { ThemeChanger } from "src/components/ThemeChanger";
 import type { Blogs } from "src/types/types";
 
 import { client } from "../libs/client/client";
@@ -28,18 +27,16 @@ const Index: NextPage<Props> = (props) => {
             return (
               <li className="my-8 border" key={index}>
                 <Link href={`blogs/${blog.slug}`}>
-                  <a>
+                  <a className="flex items-center p-4">
+                    <img src={blog.image} className="block object-cover" alt="" />
                     <h3 className="text-lg font-bold">{blog.title}</h3>
                   </a>
                 </Link>
-                {/* eslint-disable-next-line @typescript-eslint/naming-convention */}
-                {/* <article dangerouslySetInnerHTML={{ __html: blog.body }}></article> */}
               </li>
             );
           })}
         </ul>
       </div>
-      <ThemeChanger />
     </Layout>
   );
 };

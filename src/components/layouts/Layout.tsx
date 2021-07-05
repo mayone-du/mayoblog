@@ -59,7 +59,7 @@ export const Layout: React.FC<Props> = (props) => {
       </Head>
       <Header />
       <BreadCrumb />
-      <div className="md:flex md:px-64 pb-8 bg-gray-50 dark:bg-gray-800">
+      <div className="md:flex md:px-64 pb-8 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
         <main className="block p-4 mr-4 md:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
           {props.children}
         </main>

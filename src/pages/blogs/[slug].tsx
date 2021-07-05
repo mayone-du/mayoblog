@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { BlogTitle } from "src/components/blogs/BlogTitle";
 import { Layout } from "src/components/layouts/Layout";
 import { client } from "src/libs/client/client";
+import { fixDateFormat } from "src/libs/fixDateFormat";
 import type { Blog, Blogs } from "src/types/types";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -31,6 +32,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
     <Layout metaTitle={`${props.blogDetail.title} | まよブログ`}>
       <div>
         <BlogTitle blogTitle={props.blogDetail.title} />
+        <p>{fixDateFormat(props.blogDetail.createdAt)}</p>
         {/* eslint-disable-next-line @typescript-eslint/naming-convention */}
         <article dangerouslySetInnerHTML={{ __html: props.blogDetail.body }}></article>
       </div>
