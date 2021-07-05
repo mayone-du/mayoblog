@@ -11,7 +11,7 @@ export const Header: React.VFC = memo(() => {
   }, [theme]);
   return (
     <div>
-      <header className="py-2 md:px-64 dark:text-gray-100 bg-white dark:bg-gray-900 border-b border-gray-100 shadow-sm">
+      <header className="py-2 px-4 md:px-64 dark:text-gray-100 bg-white dark:bg-gray-900 border-b border-gray-100 shadow-sm">
         <nav className="flex justify-between items-center">
           <div className="my-2">
             <Link href="/">

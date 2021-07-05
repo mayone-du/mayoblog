@@ -25,7 +25,7 @@ const Index: NextPage<Props> = (props) => {
         <ul>
           {props.blogs.contents.map((blog, index) => {
             return (
-              <li className="my-8 border" key={index}>
+              <li className="mb-4 rounded-sm border" key={index}>
                 <Link href={`blogs/${blog.slug}`}>
                   <a className="flex items-center p-4">
                     <img src={blog.image} className="block object-cover" alt="" />
