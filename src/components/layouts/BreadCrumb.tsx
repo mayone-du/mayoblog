@@ -1,0 +1,12 @@
+export const BreadCrumb: React.VFC = () => {
+  return (
+    <nav className="block md:px-64 h-8 bg-gray-50">
+      <ul className="flex items-center">
+        <li className="relative before:absolute before:top-1/2 before:left-14 before:w-2 before:h-2 before:border-r-2 before:border-b-2 before:border-black before:transform before:-rotate-45 before:-translate-x-1/2 before:-translate-y-1/2">
+          HOME
+        </li>
+        <li className="ml-8">current page</li>
+      </ul>
+    </nav>
+  );
+};

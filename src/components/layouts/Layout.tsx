@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { BreadCrumb } from "src/components/layouts/BreadCrumb";
 import { Footer } from "src/components/layouts/Footer";
 import { Header } from "src/components/layouts/Header";
 import { SideBar } from "src/components/layouts/SideBar";
@@ -57,7 +58,8 @@ export const Layout: React.FC<Props> = (props) => {
         <link rel="manifest" href="/pwa/manifest.json" />
       </Head>
       <Header />
-      <div className="md:flex py-8 md:px-64 bg-gray-50 dark:bg-gray-800">
+      <BreadCrumb />
+      <div className="md:flex md:px-64 pb-8 bg-gray-50 dark:bg-gray-800">
         <main className="block p-4 mr-4 md:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
           {props.children}
         </main>
