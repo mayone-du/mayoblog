@@ -5,6 +5,6 @@ module.exports = withPWA({
     API_KEY: process.env.API_KEY,
   },
   pwa: {
-    dest: "public",
+    dest: "/public/cache",
   },
 });

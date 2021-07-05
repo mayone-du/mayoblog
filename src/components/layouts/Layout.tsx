@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Footer } from "src/components/layouts/Footer";
 import { Header } from "src/components/layouts/Header";
+import { SideBar } from "src/components/layouts/SideBar";
 
 type Props = {
   metaTitle: string;
@@ -8,7 +9,7 @@ type Props = {
 
 export const Layout: React.FC<Props> = (props) => {
   return (
-    <div>
+    <>
       <Head>
         <title>{props.metaTitle}</title>
         <meta name="description" content="description" />
@@ -56,8 +57,13 @@ export const Layout: React.FC<Props> = (props) => {
         <link rel="manifest" href="/pwa/manifest.json" />
       </Head>
       <Header />
-      <main>{props.children}</main>
+      <div className="md:flex py-8 md:px-64 bg-gray-50 dark:bg-gray-800">
+        <main className="block p-4 mr-4 md:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
+          {props.children}
+        </main>
+        <SideBar />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };

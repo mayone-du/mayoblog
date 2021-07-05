@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import "nprogress/nprogress.css";
+import "src/styles/global.css";
 
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";

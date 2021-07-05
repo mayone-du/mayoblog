@@ -1,9 +1,7 @@
 export const Footer: React.VFC = () => {
   return (
-    <div>
-      <footer>
-        <p className="py-6 text-center">copyright&copy;</p>
-      </footer>
-    </div>
+    <footer className="py-8 bg-white border-t border-gray-100">
+      <p className="text-center">copyright&copy;</p>
+    </footer>
   );
 };
