@@ -1,8 +1,9 @@
 import Head from "next/head";
+import { BottomNavigation } from "src/components/layouts/BottomNavigation";
 import { BreadCrumb } from "src/components/layouts/BreadCrumb";
 import { Footer } from "src/components/layouts/Footer";
 import { Header } from "src/components/layouts/Header";
-import { SideBar } from "src/components/layouts/SideBar";
+import { SideBar } from "src/components/layouts/sidebar/SideBar";
 
 type Props = {
   // TODO: meta情報をオブジェクト形式にする
@@ -59,6 +60,7 @@ export const Layout: React.FC<Props> = (props) => {
         <link rel="manifest" href="/pwa/manifest.json" />
       </Head>
       <Header />
+      <BottomNavigation />
       <BreadCrumb />
       <div className="lg:flex px-4 lg:px-64 pb-8 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
         <main className="block p-4 lg:mr-4 lg:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">

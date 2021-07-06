@@ -30,7 +30,7 @@ export const BlogCard: React.VFC<Props> = memo((props) => {
               <span className="block">{props.category}</span>
             </p>
             {/* タグ */}
-            <ul className="flex items-center text-xs text-gray-700">
+            <ul className="flex items-center pb-2 text-xs text-gray-700">
               {props.tags.map((tag, index) => {
                 return (
                   <li key={index}>
