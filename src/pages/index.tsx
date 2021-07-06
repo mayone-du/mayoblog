@@ -35,6 +35,9 @@ const Index: NextPage<Props> = (props) => {
                   slug={blog.slug}
                   image={blog.image}
                   description={blog.description}
+                  createdAt={blog.createdAt}
+                  category={blog.category.name}
+                  tags={blog.tags}
                 />
               </li>
             );

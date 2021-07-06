@@ -1,3 +1,15 @@
+export type Category = {
+  name: string;
+};
+
+export type Categories = { contents: Category[] };
+
+export type Tag = {
+  name: string;
+};
+
+export type Tags = { contents: Tag[] };
+
 export type Blog = {
   id: string;
   title: string;
@@ -5,25 +17,11 @@ export type Blog = {
   description: string;
   image: string;
   body: string;
-  category: string;
-  tags: string[] | [];
+  category: Category;
+  tags: { name: string }[];
   createdAt: string;
 };
 
 export type Blogs = {
   contents: Blog[];
-};
-
-export type Category = {
-  name: string;
-};
-
-export type Categories = Category[];
-
-export type Tag = {
-  name: string;
-};
-
-export type Tags = {
-  contents: Tag[];
 };

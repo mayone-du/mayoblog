@@ -18,7 +18,8 @@ export const Header: React.VFC = memo(() => {
               <a className="block text-xl font-bold">まよブログ</a>
             </Link>
           </div>
-          <ul className="flex">
+          {/* PC */}
+          <ul className="hidden md:flex">
             {HEADER_MENU.map((menu, index) => {
               return (
                 <li key={index}>
