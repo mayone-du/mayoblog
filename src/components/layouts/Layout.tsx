@@ -60,8 +60,8 @@ export const Layout: React.FC<Props> = (props) => {
       </Head>
       <Header />
       <BreadCrumb />
-      <div className="md:flex px-4 md:px-64 pb-8 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
-        <main className="block p-4 md:mr-4 md:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
+      <div className="lg:flex px-4 lg:px-64 pb-8 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
+        <main className="block p-4 lg:mr-4 lg:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
           {props.children}
         </main>
         <SideBar />

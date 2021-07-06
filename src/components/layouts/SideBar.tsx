@@ -9,7 +9,7 @@ export const SideBar: React.VFC = memo(() => {
     "p-4 mb-8 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm";
 
   return (
-    <aside className="block overflow-hidden pt-8 md:pt-0 md:ml-4 md:w-1/3">
+    <aside className="block overflow-hidden pt-8 lg:pt-0 lg:ml-4 lg:w-1/3">
       {/* 検索窓 */}
       <section className={sidebarItemClassNames}>
         <form onSubmit={handleSearch} className="flex">

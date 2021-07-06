@@ -7,7 +7,7 @@ export const BreadCrumb: React.VFC = memo(() => {
   const currentPagePath = router.asPath;
 
   return (
-    <nav className="block py-8 px-4 md:px-64 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
+    <nav className="block py-8 px-4 lg:px-64 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
       <ul className="flex items-center p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
         {/* ホームの場合 */}
         {currentPagePath === "/" || currentPagePath === "" ? (

@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { memo } from "react";
 import { Tag } from "src/components/blogs/Tag";
+import { ClockSvg } from "src/components/icons/svgs/ClockSvg";
+import { FolderOpenSvg } from "src/components/icons/svgs/FolderOpenSvg";
 import { fixDateFormat } from "src/libs/fixDateFormat";
 
 type Props = {
@@ -12,7 +15,7 @@ type Props = {
   tags: { name: string }[];
 };
 
-export const BlogCard: React.VFC<Props> = (props) => {
+export const BlogCard: React.VFC<Props> = memo((props) => {
   return (
     <div className="mb-4 rounded-md border hover:shadow-sm transition">
       <Link href={`blog/${props.slug}`}>
@@ -23,20 +26,7 @@ export const BlogCard: React.VFC<Props> = (props) => {
             <p className="text-sm text-gray-700">{props.description}</p>
             {/* カテゴリー */}
             <p className="flex items-center py-2 text-sm font-bold underline">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="block w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"
-                />
-              </svg>
+              <FolderOpenSvg className="block w-6 h-6" />
               <span className="block">{props.category}</span>
             </p>
             {/* タグ */}
@@ -50,10 +40,15 @@ export const BlogCard: React.VFC<Props> = (props) => {
               })}
             </ul>
             {/* 作成日時 */}
-            <p className="text-xs text-right text-gray-500">{fixDateFormat(props.createdAt)}</p>
+            <p className="flex items-center text-xs text-right text-gray-500">
+              <ClockSvg className="block w-4 h-4" />
+              <span className="block">{fixDateFormat(props.createdAt)}</span>
+            </p>
           </div>
         </a>
       </Link>
     </div>
   );
-};
+});
+
+BlogCard.displayName = "BlogCard";

@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 type Props = {
   tagName: string;
 };
 
-export const Tag: React.VFC<Props> = (props) => {
+export const Tag: React.VFC<Props> = memo((props) => {
   return (
     <div className="flex items-center mr-2 underline">
       {/* <svg
@@ -36,4 +38,6 @@ export const Tag: React.VFC<Props> = (props) => {
       <span>{props.tagName}</span>
     </div>
   );
-};
+});
+
+Tag.displayName = "Tag";
