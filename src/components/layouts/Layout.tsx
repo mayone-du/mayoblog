@@ -7,7 +7,6 @@ import { SideBar } from "src/components/layouts/SideBar";
 type Props = {
   // TODO: meta情報をオブジェクト形式にする
   metaTitle: string;
-  // currentPagePath: string;
 };
 
 export const Layout: React.FC<Props> = (props) => {
@@ -15,12 +14,12 @@ export const Layout: React.FC<Props> = (props) => {
     <>
       <Head>
         <title>{props.metaTitle}</title>
-        <meta name="description" content="description" />
-        <meta property="og:url" content="https://" />
+        <meta name="description" content="プログラミングに関する技術知識を発信するブログです。" />
+        <meta property="og:url" content="https://mayoblog.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Test Title" />
-        <meta property="og:description" content="Test Description" />
-        <meta property="og:site_name" content="Test SiteName" />
+        <meta property="og:title" content="まよブログ" />
+        <meta property="og:description" content="技術知識のアウトプットブログ。" />
+        <meta property="og:site_name" content="まよブログ" />
         <meta property="og:image" content="/images/sample-image.jpg" />
 
         {/* Twitter */}

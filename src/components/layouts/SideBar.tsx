@@ -68,7 +68,11 @@ export const SideBar: React.VFC = memo(() => {
           </div>
         </div>
         <p className="py-4 text-sm text-gray-700 dark:text-gray-400">
-          自己紹介文が入ります〜〜 自己紹介文が入ります〜〜 自己紹介文が入ります〜〜
+          プログラミングが大好きな19歳の高卒エンジニア。
+          高校卒業後にYouTubeがきっかけでプログラミングに出会い、 そこからプログラミングの虜に。
+          主にWeb系の学習をしており、得意分野はTypeScriptやNext.jsを用いたフロントエンド開発。
+          Pythonでの自動化やWebスクレイピング、DjangoでのAPI開発なども行っている。
+          好きなものはプログラミング、米津玄師、猫。
         </p>
         <p>
           <Link href="/profile">
