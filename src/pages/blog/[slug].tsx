@@ -36,7 +36,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
         {/* サムネイル */}
         <img src={props.blogDetail.image} alt="" className="block object-cover w-full h-60" />
         {/* カテゴリー */}
-        <p className="flex items-center pt-4">
+        <p className="flex items-center py-4 font-bold underline">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="block w-6 h-6"
@@ -48,12 +48,13 @@ const BlogDetailPage: NextPage<Props> = (props) => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+              d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"
             />
           </svg>
           <span className="block">{props.blogDetail.category.name}</span>
         </p>
-        <ul className="flex items-center">
+        {/* タグ */}
+        <ul className="flex items-center pb-4">
           {props.blogDetail.tags.map((tag, index) => {
             return (
               <li key={index}>
@@ -62,7 +63,24 @@ const BlogDetailPage: NextPage<Props> = (props) => {
             );
           })}
         </ul>
-        <p>{fixDateFormat(props.blogDetail.createdAt)}</p>
+        {/* 作成日時 */}
+        <p className="flex items-center text-sm text-gray-500">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="block w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span className="block">{fixDateFormat(props.blogDetail.createdAt)}</span>
+        </p>
         <article
           className="pt-4"
           // eslint-disable-next-line @typescript-eslint/naming-convention

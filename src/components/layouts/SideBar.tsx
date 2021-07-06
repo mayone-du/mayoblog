@@ -41,7 +41,12 @@ export const SideBar: React.VFC = memo(() => {
           <div className="pl-4">
             <h3 className="pb-4 text-lg font-bold">まよねーづ</h3>
             <div className="flex items-center">
-              <a href="/" className="block mr-2" target="_blank" rel="noopener">
+              <a
+                href="https://github.com/mayone-du"
+                className="block mr-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -53,7 +58,12 @@ export const SideBar: React.VFC = memo(() => {
                 </svg>
               </a>
 
-              <a href="/" className="block mr-2" target="_blank" rel="noopener">
+              <a
+                href="https://twitter.com/mayo1201blog"
+                className="block mr-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -67,13 +77,20 @@ export const SideBar: React.VFC = memo(() => {
             </div>
           </div>
         </div>
-        <p className="py-4 text-sm text-gray-700 dark:text-gray-400">
-          プログラミングが大好きな19歳の高卒エンジニア。
-          高校卒業後にYouTubeがきっかけでプログラミングに出会い、 そこからプログラミングの虜に。
-          主にWeb系の学習をしており、得意分野はTypeScriptやNext.jsを用いたフロントエンド開発。
-          Pythonでの自動化やWebスクレイピング、DjangoでのAPI開発なども行っている。
-          好きなものはプログラミング、米津玄師、猫。
-        </p>
+        <div className="py-4 text-sm text-gray-700 dark:text-gray-400">
+          <p className="py-2">プログラミングが大好きな19歳の高卒エンジニア。</p>
+          <p className="py-2">
+            高校卒業後にYouTubeがきっかけでプログラミングに出会い、 そこからプログラミングの虜に。
+          </p>
+          <p className="py-2">
+            主にWeb系の学習をしており、得意分野はTypeScriptやNext.jsを用いたフロントエンド開発。
+          </p>
+          <p className="py-2">
+            Pythonでの自動化やWebスクレイピング、DjangoでのAPI開発なども行っている。
+          </p>
+          <p className="py-2">好きなものはプログラミング、米津玄師、猫。</p>
+        </div>
+
         <p>
           <Link href="/profile">
             <a className="block py-2 mx-auto w-1/2 text-center text-gray-600 hover:bg-gray-50 rounded-md border border-gray-200 hover:shadow-sm transition">

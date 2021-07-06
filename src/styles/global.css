@@ -4,3 +4,7 @@ article h2 {
   font-size: 22px;
   font-weight: bold;
 }
+
+article p {
+  padding-bottom: 20px;
+}
