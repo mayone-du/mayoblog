@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { BlogTitle } from "src/components/blogs/BlogTitle";
+import { Tag } from "src/components/blogs/Tag";
 import { Layout } from "src/components/layouts/Layout";
 import { client } from "src/libs/client/client";
 import { fixDateFormat } from "src/libs/fixDateFormat";
@@ -31,7 +31,17 @@ const BlogDetailPage: NextPage<Props> = (props) => {
   return (
     <Layout metaTitle={`${props.blogDetail.title} | まよブログ`}>
       <div>
-        <BlogTitle blogTitle={props.blogDetail.title} />
+        <h1 className="text-3xl font-bold">{props.blogDetail.title}</h1>;
+        <p>{props.blogDetail.category.name}</p>
+        <ul>
+          {props.blogDetail.tags.map((tag, index) => {
+            return (
+              <li key={index}>
+                <Tag tagName={tag.name} />
+              </li>
+            );
+          })}
+        </ul>
         <p>{fixDateFormat(props.blogDetail.createdAt)}</p>
         {/* eslint-disable-next-line @typescript-eslint/naming-convention */}
         <article dangerouslySetInnerHTML={{ __html: props.blogDetail.body }}></article>
