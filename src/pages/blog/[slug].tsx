@@ -1,4 +1,6 @@
+import cheerio from "cheerio";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { TableOfContents } from "src/components/blogs/TableOfContents";
 import { Tag } from "src/components/blogs/Tag";
 import { ClockSvg } from "src/components/icons/svgs/ClockSvg";
 import { FolderOpenSvg } from "src/components/icons/svgs/FolderOpenSvg";
@@ -30,6 +32,16 @@ type Props = {
   blogDetail: Blog;
 };
 const BlogDetailPage: NextPage<Props> = (props) => {
+  const $ = cheerio.load(props.blogDetail.body);
+  const headings = $("h2, h3").toArray();
+  const tableOfContents = headings.map((data: any) => {
+    return {
+      text: data.children[0].data,
+      id: data.attribs.id,
+      level: data.name,
+    };
+  });
+
   return (
     <Layout metaTitle={`${props.blogDetail.title} | まよブログ`}>
       <div>
@@ -57,6 +69,11 @@ const BlogDetailPage: NextPage<Props> = (props) => {
           <ClockSvg className="block w-4 h-4" />
           <span className="block">{fixDateFormat(props.blogDetail.createdAt)}</span>
         </p>
+        {/* 目次 */}
+        <div>
+          <h3 className="py-4 font-bold text-center">目次</h3>
+          <TableOfContents tableOfContents={tableOfContents} />
+        </div>
         <article
           className="pt-4"
           // eslint-disable-next-line @typescript-eslint/naming-convention
