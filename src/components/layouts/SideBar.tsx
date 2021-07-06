@@ -71,7 +71,7 @@ export const SideBar: React.VFC = memo(() => {
           自己紹介文が入ります〜〜 自己紹介文が入ります〜〜 自己紹介文が入ります〜〜
         </p>
         <p>
-          <Link href="/">
+          <Link href="/profile">
             <a className="block py-2 mx-auto w-1/2 text-center bg-blue-100 rounded-sm shadow-sm">
               プロフィール
             </a>
