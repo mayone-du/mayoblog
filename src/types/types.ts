@@ -19,3 +19,11 @@ export type Category = {
 };
 
 export type Categories = Category[];
+
+export type Tag = {
+  name: string;
+};
+
+export type Tags = {
+  contents: Tag[];
+};

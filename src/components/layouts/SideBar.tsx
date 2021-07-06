@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { memo } from "react";
 import { useSearch } from "src/libs/hooks/useSearch";
 
@@ -6,8 +7,10 @@ export const SideBar: React.VFC = memo(() => {
   const { handleSearch } = useSearch();
   const sidebarItemClassNames =
     "p-4 mb-8 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm";
+
   return (
     <aside className="block overflow-hidden md:ml-4 md:w-1/3">
+      {/* 検索窓 */}
       <section className={sidebarItemClassNames}>
         <form onSubmit={handleSearch} className="flex">
           <input
@@ -23,7 +26,7 @@ export const SideBar: React.VFC = memo(() => {
           </button>
         </form>
       </section>
-
+      {/* 自己紹介 */}
       <section className={sidebarItemClassNames}>
         <div className="flex items-center w-full">
           <Image
@@ -64,11 +67,18 @@ export const SideBar: React.VFC = memo(() => {
             </div>
           </div>
         </div>
-        <p className="pt-4 text-sm text-gray-700 dark:text-gray-400">
+        <p className="py-4 text-sm text-gray-700 dark:text-gray-400">
           自己紹介文が入ります〜〜 自己紹介文が入ります〜〜 自己紹介文が入ります〜〜
         </p>
+        <p>
+          <Link href="/">
+            <a className="block py-2 mx-auto w-1/2 text-center bg-blue-100 rounded-sm shadow-sm">
+              プロフィール
+            </a>
+          </Link>
+        </p>
       </section>
-      <section className={sidebarItemClassNames}>aaa</section>
+      {/* コンテンツ */}
       <section className={sidebarItemClassNames}>hoge</section>
     </aside>
   );

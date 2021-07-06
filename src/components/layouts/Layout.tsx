@@ -5,7 +5,9 @@ import { Header } from "src/components/layouts/Header";
 import { SideBar } from "src/components/layouts/SideBar";
 
 type Props = {
+  // TODO: meta情報をオブジェクト形式にする
   metaTitle: string;
+  // currentPagePath: string;
 };
 
 export const Layout: React.FC<Props> = (props) => {
