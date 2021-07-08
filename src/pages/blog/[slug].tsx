@@ -1,4 +1,7 @@
+import "highlight.js/styles/hybrid.css";
+
 import cheerio from "cheerio";
+import hljs from "highlight.js";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { TableOfContents } from "src/components/blogs/TableOfContents";
 import { Tag } from "src/components/blogs/Tag";
@@ -25,6 +28,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const blogDetail = blogs.contents.filter((blog) => {
     return blog.slug === context.params?.slug;
   });
+
+  // 見出しの作成
   const $ = cheerio.load(blogDetail[0].body);
   const headings = $("h2").toArray();
   const tableOfContents = headings.map((data: any) => {
@@ -35,13 +40,33 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   });
 
+  // h2 タグへクラスを付与
+  $("h2").each((_, element) => {
+    $(element).addClass("p-4 text-2xl font-bold mb-4 border-l-4 border-black bg-gray-50");
+  });
+  // h3 タグへクラスを付与
+  $("h3").each((_, element) => {
+    $(element).addClass("font-bold text-xl");
+  });
+  // pタグへクラスを付与
+  $("p").each((_, element) => {
+    $(element).addClass("mb-4");
+  });
+  // シンタックスハイライトの導入
+  $("pre code").each((_, element) => {
+    const result = hljs.highlightAuto($(element).text());
+    $(element).html(result.value);
+    $(element).addClass("hljs p-1");
+  });
+
   return {
-    props: { blogDetail: blogDetail[0], tableOfContents: tableOfContents },
+    props: { blogDetail: blogDetail[0], tableOfContents: tableOfContents, parsedHtml: $.html() },
   };
 };
 type Props = {
   blogDetail: Blog;
   tableOfContents: any;
+  parsedHtml: any;
 };
 const BlogDetailPage: NextPage<Props> = (props) => {
   return (
@@ -92,7 +117,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
         <article
           className="pt-4"
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          dangerouslySetInnerHTML={{ __html: props.blogDetail.body }}
+          dangerouslySetInnerHTML={{ __html: props.parsedHtml }}
         ></article>
       </div>
     </Layout>
