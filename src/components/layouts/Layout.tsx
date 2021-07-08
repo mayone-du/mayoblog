@@ -7,7 +7,6 @@ import { Header } from "src/components/layouts/Header";
 import { SideBar } from "src/components/layouts/sidebar/SideBar";
 
 type Props = {
-  // TODO: meta情報をオブジェクト形式にする
   meta?: {
     pageName?: string;
     description?: string;

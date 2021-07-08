@@ -1,8 +1,18 @@
-import { useCallback } from "react";
+import { useRouter } from "next/dist/client/router";
+import { useCallback, useState } from "react";
 
 export const useSearch = () => {
-  const handleSearch = useCallback((e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const router = useRouter();
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const handleChangeSearchKeyword = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchKeyword(e.target.value);
   }, []);
-  return { handleSearch };
+  const handleSearch = useCallback(
+    (e: React.ChangeEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      router.push({ pathname: "/search/results", query: { keyword: searchKeyword } });
+    },
+    [router, searchKeyword],
+  );
+  return { searchKeyword, handleChangeSearchKeyword, handleSearch };
 };
