@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 import { Layout } from "src/components/layouts/Layout";
 import { Headline1 } from "src/components/utils/Headline1";
 import { client } from "src/libs/client/client";
@@ -23,7 +24,13 @@ const TagIndexPage: NextPage<Props> = (props) => {
       <Headline1 text="タグ一覧" />
       <ul>
         {props.tags.contents.map((tag, index) => {
-          return <li key={index}>{tag.name}</li>;
+          return (
+            <li key={index}>
+              <Link href={`/tag/${tag.slug}`}>
+                <a>{tag.name}</a>
+              </Link>
+            </li>
+          );
         })}
       </ul>
     </Layout>

@@ -13,7 +13,7 @@ type Props = {
 export const BlogCard: React.VFC<Props> = memo((props) => {
   return (
     <div className="mb-4 rounded-md border hover:shadow-sm transition">
-      <Link href={`blog/${props.blog.slug}`}>
+      <Link href={`/blog/${props.blog.slug}`}>
         <a className="block md:flex items-center p-4 w-full">
           <img
             src={props.blog.image.url}
