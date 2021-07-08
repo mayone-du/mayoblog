@@ -15,7 +15,11 @@ export type Blog = {
   title: string;
   slug: string;
   description: string;
-  image: string;
+  image: {
+    url: string;
+    height: number;
+    width: number;
+  };
   body: string;
   category: Category;
   tags: { name: string }[];

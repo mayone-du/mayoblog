@@ -1,27 +1,27 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/components/layouts/Layout";
 import { client } from "src/libs/client/client";
-import type { Categories } from "src/types/types";
+import type { Tags } from "src/types/types";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories: Categories = await client.get({ endpoint: "categories" });
+  const tags: Tags = await client.get({ endpoint: "tags" });
 
   return {
     props: {
-      categories: categories,
+      tags: tags,
     },
     revalidate: 60 * 60,
   };
 };
 type Props = {
-  categories: Categories;
+  tags: Tags;
 };
 const TagIndexPage: NextPage<Props> = (props) => {
   return (
-    <Layout meta={{ pageName: "カテゴリー一覧" }}>
-      <h1>カテゴリー一覧</h1>
+    <Layout meta={{ pageName: "タグ一覧" }}>
+      <h1>タグ一覧</h1>
       <ul>
-        {props.categories.contents.map((tag, index) => {
+        {props.tags.contents.map((tag, index) => {
           return <li key={index}>{tag.name}</li>;
         })}
       </ul>

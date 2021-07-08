@@ -23,7 +23,7 @@ export const BlogCard: React.VFC<Props> = memo((props) => {
       <Link href={`blog/${props.blog.slug}`}>
         <a className="flex items-center p-4 w-full">
           <img
-            src={props.blog.image}
+            src={props.blog.image.url}
             className="block object-cover w-1/4 min-h-full border"
             alt=""
           />

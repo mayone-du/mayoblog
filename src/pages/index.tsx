@@ -26,6 +26,7 @@ const Index: NextPage<Props> = (props) => {
   return (
     <Layout>
       <div>
+        <h1 className="pb-4 font-bold text-center">まよブログ</h1>
         <ul>
           {props.blogs.contents.map((blog, index) => {
             return (

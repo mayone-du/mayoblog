@@ -5,6 +5,7 @@ import { Tag } from "src/components/blogs/Tag";
 import { ClockSvg } from "src/components/icons/svgs/ClockSvg";
 import { FolderOpenSvg } from "src/components/icons/svgs/FolderOpenSvg";
 import { Layout } from "src/components/layouts/Layout";
+import { Headline1 } from "src/components/utils/Headline1";
 import { client } from "src/libs/client/client";
 import { fixDateFormat } from "src/libs/fixDateFormat";
 import type { Blog, Blogs } from "src/types/types";
@@ -47,14 +48,18 @@ const BlogDetailPage: NextPage<Props> = (props) => {
       meta={{
         pageName: props.blogDetail.title,
         description: props.blogDetail.description,
-        ogImagePath: props.blogDetail.image,
+        ogImagePath: props.blogDetail.image.url,
       }}
     >
       <div>
         {/* タイトル */}
-        <h1 className="pb-4 text-3xl font-bold">{props.blogDetail.title}</h1>
+        <Headline1 text={props.blogDetail.title} />
         {/* サムネイル */}
-        <img src={props.blogDetail.image} alt="" className="block object-cover w-full h-60" />
+        <img
+          src={props.blogDetail.image.url}
+          alt=""
+          className="block object-cover w-full h-auto border"
+        />
         {/* カテゴリー */}
         <p className="flex items-center py-4 font-bold underline">
           <FolderOpenSvg className="block w-6 h-6" />
