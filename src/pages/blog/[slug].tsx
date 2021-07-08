@@ -43,7 +43,13 @@ const BlogDetailPage: NextPage<Props> = (props) => {
   });
 
   return (
-    <Layout metaTitle={`${props.blogDetail.title} | まよブログ`}>
+    <Layout
+      meta={{
+        pageName: props.blogDetail.title,
+        description: props.blogDetail.description,
+        ogImagePath: props.blogDetail.image,
+      }}
+    >
       <div>
         {/* タイトル */}
         <h1 className="pb-4 text-3xl font-bold">{props.blogDetail.title}</h1>

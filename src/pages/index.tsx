@@ -24,7 +24,7 @@ type Props = {
 };
 const Index: NextPage<Props> = (props) => {
   return (
-    <Layout metaTitle="まよブログ">
+    <Layout>
       <div>
         <ul>
           {props.blogs.contents.map((blog, index) => {

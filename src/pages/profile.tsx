@@ -4,7 +4,7 @@ import { Profile } from "src/components/profile/Profile";
 
 const ProfilePage: NextPage = () => {
   return (
-    <Layout metaTitle="まよねーづのプロフィール詳細 | まよブログ">
+    <Layout meta={{ pageName: "まよねーづのプロフィール詳細 | まよブログ" }}>
       <Profile />
     </Layout>
   );

@@ -1,3 +1,4 @@
+import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import { BottomNavigation } from "src/components/layouts/BottomNavigation";
 import { BreadCrumb } from "src/components/layouts/BreadCrumb";
@@ -7,25 +8,38 @@ import { SideBar } from "src/components/layouts/sidebar/SideBar";
 
 type Props = {
   // TODO: meta情報をオブジェクト形式にする
-  metaTitle: string;
+  meta?: {
+    pageName?: string;
+    description?: string;
+    ogImagePath?: string;
+  };
 };
 
 export const Layout: React.FC<Props> = (props) => {
+  const router = useRouter();
+  const meta = {
+    title: props.meta?.pageName ? `${props.meta.pageName} | まよブログ` : "まよブログ",
+    description: props.meta?.description
+      ? `${props.meta.description}`
+      : "プログラミングに関する技術知識を発信するブログです。",
+    ogImagePath: props.meta?.ogImagePath ? props.meta.ogImagePath : "",
+  };
   return (
     <>
       <Head>
-        <title>{props.metaTitle}</title>
-        <meta name="description" content="プログラミングに関する技術知識を発信するブログです。" />
-        <meta property="og:url" content="https://mayoblog.vercel.app" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta property="og:url" content={`https://mayoblog.vercel.app${router.asPath}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="まよブログ" />
+        <meta property="og:title" content={meta.title} />
         <meta property="og:description" content="技術知識のアウトプットブログ。" />
         <meta property="og:site_name" content="まよブログ" />
-        <meta property="og:image" content="/images/sample-image.jpg" />
+        <meta property="og:image" content={meta.ogImagePath} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="Summary Card" />
         <meta name="twitter:site" content="@mayo1201blog" />
+        <meta name="twitter:image" content={meta.ogImagePath} />
 
         {/* PWA */}
         <link
