@@ -1,4 +1,7 @@
 /* blog content */
+html {
+  scroll-behavior: smooth;
+}
 
 article h2 {
   font-size: 22px;

@@ -65,7 +65,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
           })}
         </ul>
         {/* 作成日時 */}
-        <p className="flex items-center text-sm text-gray-500">
+        <p className="flex items-center text-gray-500">
           <ClockSvg className="block w-4 h-4" />
           <span className="block">{fixDateFormat(props.blogDetail.createdAt)}</span>
         </p>
