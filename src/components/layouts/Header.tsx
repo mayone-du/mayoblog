@@ -47,11 +47,8 @@ export const Header: React.VFC = memo(() => {
           })}
           <li className="flex justify-center items-center ml-4">
             <button className="block" onClick={handleChangeTheme} type="button">
-              {theme === "light" ? (
-                <SunSvg className="block w-6 h-6" />
-              ) : (
-                <MoonSvg className="block w-6 h-6" />
-              )}
+              {theme === "light" && <SunSvg className="block w-6 h-6" />}
+              {theme === "dark" && <MoonSvg className="block w-6 h-6" />}
             </button>
           </li>
         </ul>
