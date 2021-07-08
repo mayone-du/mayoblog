@@ -4,7 +4,16 @@ html {
 }
 
 article h2 {
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 16px; /* tailwindのp-4 */
+  margin-bottom: 16px;
+  background-color: #f9fafb;
+  border-left: 5px solid black;
+}
+
+article h3 {
+  font-size: 20px;
   font-weight: bold;
 }
 

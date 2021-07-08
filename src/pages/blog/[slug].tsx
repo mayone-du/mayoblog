@@ -25,16 +25,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const blogDetail = blogs.contents.filter((blog) => {
     return blog.slug === context.params?.slug;
   });
-  return {
-    props: { blogDetail: blogDetail[0] },
-  };
-};
-type Props = {
-  blogDetail: Blog;
-};
-const BlogDetailPage: NextPage<Props> = (props) => {
-  const $ = cheerio.load(props.blogDetail.body);
-  const headings = $("h2, h3").toArray();
+  const $ = cheerio.load(blogDetail[0].body);
+  const headings = $("h2").toArray();
   const tableOfContents = headings.map((data: any) => {
     return {
       text: data.children[0].data,
@@ -43,6 +35,15 @@ const BlogDetailPage: NextPage<Props> = (props) => {
     };
   });
 
+  return {
+    props: { blogDetail: blogDetail[0], tableOfContents: tableOfContents },
+  };
+};
+type Props = {
+  blogDetail: Blog;
+  tableOfContents: any;
+};
+const BlogDetailPage: NextPage<Props> = (props) => {
   return (
     <Layout
       meta={{
@@ -82,8 +83,11 @@ const BlogDetailPage: NextPage<Props> = (props) => {
         </p>
         {/* 目次 */}
         <div>
+          <p className="py-4 font-bold">{props.blogDetail.description}</p>
+        </div>
+        <div>
           <h3 className="py-4 font-bold text-center">目次</h3>
-          <TableOfContents tableOfContents={tableOfContents} />
+          <TableOfContents tableOfContents={props.tableOfContents} />
         </div>
         <article
           className="pt-4"
