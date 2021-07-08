@@ -3,6 +3,7 @@ import { useRouter } from "next/dist/client/router";
 import { useEffect, useState } from "react";
 import { BlogCard } from "src/components/blogs/BlogCard";
 import { Layout } from "src/components/layouts/Layout";
+import { Headline1 } from "src/components/utils/Headline1";
 import { client } from "src/libs/client/client";
 import type { Blogs } from "src/types/types";
 
@@ -18,7 +19,7 @@ const ResultsPage: NextPage = () => {
   }, [searchKeyword]);
   return (
     <Layout meta={{ pageName: `${searchKeyword}の検索結果` }}>
-      <p>{searchKeyword}の検索結果一覧</p>
+      <Headline1 text={`${searchKeyword}の検索結果一覧}`} />
       <ul>
         {results?.contents.map((blog, index) => {
           return (

@@ -1,5 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 import { Layout } from "src/components/layouts/Layout";
+import { Headline1 } from "src/components/utils/Headline1";
 import { client } from "src/libs/client/client";
 import type { Categories } from "src/types/types";
 
@@ -19,10 +21,16 @@ type Props = {
 const TagIndexPage: NextPage<Props> = (props) => {
   return (
     <Layout meta={{ pageName: "カテゴリー一覧" }}>
-      <h1>カテゴリー一覧</h1>
+      <Headline1 text="カテゴリー一覧" />
       <ul>
-        {props.categories.contents.map((tag, index) => {
-          return <li key={index}>{tag.name}</li>;
+        {props.categories.contents.map((category, index) => {
+          return (
+            <li key={index}>
+              <Link href={`/category/${category.slug}`}>
+                <a>{category.name}</a>
+              </Link>
+            </li>
+          );
         })}
       </ul>
     </Layout>

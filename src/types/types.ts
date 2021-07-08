@@ -1,11 +1,15 @@
 export type Category = {
+  id: string;
   name: string;
+  slug: string;
 };
 
 export type Categories = { contents: Category[] };
 
 export type Tag = {
+  id: string;
   name: string;
+  slug: string;
 };
 
 export type Tags = { contents: Tag[] };

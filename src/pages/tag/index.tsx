@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/components/layouts/Layout";
+import { Headline1 } from "src/components/utils/Headline1";
 import { client } from "src/libs/client/client";
 import type { Tags } from "src/types/types";
 
@@ -19,7 +20,7 @@ type Props = {
 const TagIndexPage: NextPage<Props> = (props) => {
   return (
     <Layout meta={{ pageName: "タグ一覧" }}>
-      <h1>タグ一覧</h1>
+      <Headline1 text="タグ一覧" />
       <ul>
         {props.tags.contents.map((tag, index) => {
           return <li key={index}>{tag.name}</li>;
