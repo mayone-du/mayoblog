@@ -7,13 +7,6 @@ import { fixDateFormat } from "src/libs/fixDateFormat";
 import type { Blog } from "src/types/types";
 
 type Props = {
-  // title: string;
-  // slug: string;
-  // image: string;
-  // description: string;
-  // createdAt: string;
-  // category: string;
-  // tags: { name: string }[];
   blog: Blog;
 };
 
@@ -21,13 +14,13 @@ export const BlogCard: React.VFC<Props> = memo((props) => {
   return (
     <div className="mb-4 rounded-md border hover:shadow-sm transition">
       <Link href={`blog/${props.blog.slug}`}>
-        <a className="flex items-center p-4 w-full">
+        <a className="block md:flex items-center p-4 w-full">
           <img
             src={props.blog.image.url}
-            className="block object-cover w-1/4 min-h-full border"
+            className="block object-cover w-full md:w-1/4 min-h-full border"
             alt=""
           />
-          <div className="pl-4 w-3/4">
+          <div className="md:pl-4 w-full md:w-3/4">
             <h3 className="text-lg font-bold">{props.blog.title}</h3>
             <p className="text-sm text-gray-700">{props.blog.description}</p>
             {/* カテゴリー */}

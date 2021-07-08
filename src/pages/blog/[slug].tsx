@@ -46,11 +46,19 @@ export const getStaticProps: GetStaticProps = async (context) => {
   });
   // h3 タグへクラスを付与
   $("h3").each((_, element) => {
-    $(element).addClass("font-bold text-xl");
+    $(element).addClass("pl-4 py-2 my-4 font-bold text-xl border-l-8 border-black");
   });
+  // h4 タグへクラスを付与
+  $("h4").each((_, element) => {
+    $(element).addClass("my-2 font-bold text-lg");
+  });
+
   // pタグへクラスを付与
   $("p").each((_, element) => {
     $(element).addClass("mb-4");
+  });
+  $("ul").each((_, element) => {
+    $(element).addClass("py-4 px-8 m-4 bg-gray-50 border border-black border-dashed list-disc");
   });
   // シンタックスハイライトの導入
   $("pre code").each((_, element) => {
