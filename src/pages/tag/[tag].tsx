@@ -14,7 +14,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return `/tag/${tag.slug}`;
   });
 
-  return { paths: paths, fallback: false };
+  return { paths: paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {

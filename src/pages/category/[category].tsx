@@ -14,7 +14,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return `/category/${category.slug}`;
   });
 
-  return { paths: paths, fallback: false };
+  return { paths: paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
