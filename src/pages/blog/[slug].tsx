@@ -61,10 +61,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
     $(element).addClass("py-4 px-8 m-4 bg-gray-50 border border-black border-dashed list-disc");
   });
   // シンタックスハイライトの導入
+  $("pre").each((_, element) => {
+    $(element).addClass("block hljs overflow-x-scroll");
+  });
   $("pre code").each((_, element) => {
     const result = hljs.highlightAuto($(element).text());
     $(element).html(result.value);
-    $(element).addClass("hljs p-1");
+    $(element).addClass("p-1 block");
   });
 
   return {
