@@ -6,6 +6,7 @@ const NotFoundPage = () => {
     <div>
       <Layout meta={{ pageName: "404 Not Found" }}>
         <Headline1 text="404 Not Found" />
+        <p>お探しのページは見つかりませんでした。</p>
       </Layout>
     </div>
   );
