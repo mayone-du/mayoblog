@@ -19,10 +19,10 @@ export const Header: React.VFC = memo(() => {
           </Link>
         </div>
         {/* PC */}
-        <ul className="hidden lg:flex">
+        <ul className="flex">
           {HEADER_MENU.map((menu, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="hidden lg:block">
                 <Link href={menu.href}>
                   <a className="flex flex-col justify-center items-center mx-4 text-black dark:text-gray-100">
                     <svg
