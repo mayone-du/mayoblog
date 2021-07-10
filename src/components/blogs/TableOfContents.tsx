@@ -10,7 +10,7 @@ export const TableOfContents: NextPage<Props> = memo((props) => {
       {props.tableOfContents.map((contents: any, index: any) => {
         return (
           <li className="py-1 ml-4 list-disc" key={index}>
-            <a className="text-blue-600 underline" href={`#${contents.id}`}>
+            <a className="text-blue-600 dark:text-blue-400 underline" href={`#${contents.id}`}>
               {contents.text}
             </a>
           </li>

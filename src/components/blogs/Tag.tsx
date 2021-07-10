@@ -6,7 +6,7 @@ type Props = {
 
 export const Tag: React.VFC<Props> = memo((props) => {
   return (
-    <div className="flex items-center mr-2 underline">
+    <div className="flex items-center mr-2 dark:text-gray-400 underline">
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         className="block w-4 h-4"

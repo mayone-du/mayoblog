@@ -1,8 +1,38 @@
+import Link from "next/link";
 import { memo } from "react";
 
 export const Footer: React.VFC = memo(() => {
   return (
-    <footer className="pt-8 pb-20 lg:pb-8 bg-white dark:bg-gray-900 border-t border-gray-100">
+    <footer className="px-4 md:px-64 pt-8 pb-20 lg:pb-8 bg-white dark:bg-gray-900 border-t border-gray-100">
+      <nav>
+        <ul className="text-blue-600 underline dark:to-blue-400">
+          <li className="mb-2">
+            <Link href="/">
+              <a>ホーム</a>
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link href="/blog">
+              <a>ブログ</a>
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link href="/category">
+              <a>カテゴリー</a>
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link href="/tag">
+              <a>タグ</a>
+            </Link>
+          </li>{" "}
+          <li className="mb-2">
+            <Link href="/profile">
+              <a>プロフィール</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <p className="text-center">copyright&copy;</p>
     </footer>
   );

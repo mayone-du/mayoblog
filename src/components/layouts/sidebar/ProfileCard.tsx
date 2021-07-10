@@ -70,7 +70,7 @@ export const ProfileCard: React.VFC = memo(() => {
 
       <p>
         <Link href="/profile">
-          <a className="block py-2 mx-auto w-1/2 text-center text-gray-600 hover:bg-gray-50 rounded-md border border-gray-200 hover:shadow-sm transition">
+          <a className="block py-2 mx-auto w-1/2 text-center text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md border border-gray-200 hover:shadow-sm transition">
             プロフィール
           </a>
         </Link>

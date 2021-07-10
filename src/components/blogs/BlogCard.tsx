@@ -22,7 +22,7 @@ export const BlogCard: React.VFC<Props> = memo((props) => {
           />
           <div className="md:pl-4 w-full md:w-3/4">
             <h3 className="text-lg font-bold">{props.blog.title}</h3>
-            <p className="text-sm text-gray-700">{props.blog.description}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-400">{props.blog.description}</p>
             {/* カテゴリー */}
             <p className="flex items-center py-2 text-sm font-bold underline">
               <FolderOpenSvg className="block w-6 h-6" />
