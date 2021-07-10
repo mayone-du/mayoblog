@@ -26,7 +26,7 @@ export type Blog = {
   };
   body: string;
   category: Category;
-  tags: { name: string }[];
+  tags: { name: string; slug: string }[];
   createdAt: string;
 };
 

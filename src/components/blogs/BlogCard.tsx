@@ -47,6 +47,51 @@ export const BlogCard: React.VFC<Props> = memo((props) => {
         </a>
       </Link>
     </div>
+
+    // <div className="mb-4 rounded-md border hover:shadow-sm transition">
+    //   <h3 className="text-2xl font-bold text-center">
+    //     <Link href={`/blog/${props.blog.slug}`}>
+    //       <a className="hover:underline">{props.blog.title}</a>
+    //     </Link>
+    //   </h3>
+    //   <Link href={`/blog/${props.blog.slug}`}>
+    //     <a>
+    //       <img src={props.blog.image.url} className="block object-cover w-full border" alt="" />
+    //     </a>
+    //   </Link>
+
+    //   <div>
+    //     <p className="text-sm text-gray-700 dark:text-gray-400">{props.blog.description}</p>
+    //     {/* カテゴリー */}
+    //     <p className="py-2 text-sm font-bold underline">
+    //       <Link href={`/category/${props.blog.category.slug}`}>
+    //         <a className="flex items-center">
+    //           <FolderOpenSvg className="block w-6 h-6" />
+    //           <span className="block">{props.blog.category.name}</span>
+    //         </a>
+    //       </Link>
+    //     </p>
+    //     {/* タグ */}
+    //     <ul className="flex items-center pb-2 text-xs text-gray-700">
+    //       {props.blog.tags.map((tag, index) => {
+    //         return (
+    //           <li key={index}>
+    //             <Link href={`/tag/${tag.slug}`}>
+    //               <a>
+    //                 <Tag tagName={tag.name} />
+    //               </a>
+    //             </Link>
+    //           </li>
+    //         );
+    //       })}
+    //     </ul>
+    //     {/* 作成日時 */}
+    //     <p className="flex items-center text-xs text-right text-gray-500">
+    //       <ClockSvg className="block w-4 h-4" />
+    //       <span className="block">{fixDateFormat(props.blog.createdAt)}</span>
+    //     </p>
+    //   </div>
+    // </div>
   );
 });
 
