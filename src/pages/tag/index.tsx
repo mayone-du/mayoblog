@@ -27,7 +27,7 @@ const TagIndexPage: NextPage<Props> = (props) => {
           return (
             <li key={index}>
               <Link href={`/tag/${tag.slug}`}>
-                <a>{tag.name}</a>
+                <a className="text-blue-600 underline">{tag.name}</a>
               </Link>
             </li>
           );
