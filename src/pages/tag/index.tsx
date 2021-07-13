@@ -22,7 +22,7 @@ const TagIndexPage: NextPage<Props> = (props) => {
   return (
     <Layout meta={{ pageName: "タグ一覧" }}>
       <Headline1 text="タグ一覧" />
-      <ul>
+      <ul className="pl-4 list-disc">
         {props.tags.contents.map((tag, index) => {
           return (
             <li key={index}>
