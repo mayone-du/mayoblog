@@ -55,17 +55,17 @@ export const ProfileCard: React.VFC = memo(() => {
         </div>
       </div>
       <div className="py-4 text-sm text-gray-700 dark:text-gray-400">
-        <p className="py-2">プログラミングが大好きな19歳の高卒エンジニア。</p>
+        <p className="py-2">プログラミングが大好きな19歳の高卒エンジニアです。</p>
         <p className="py-2">
           高校卒業後にYouTubeがきっかけでプログラミングに出会い、 そこからプログラミングの虜に。
         </p>
         <p className="py-2">
-          主にWeb系の学習をしており、得意分野はTypeScriptやNext.jsを用いたフロントエンド開発。
+          主にWeb系の学習をしており、TypeScriptやNext.js,GraphQLを用いたフロントエンド開発が得意です。
         </p>
         <p className="py-2">
-          Pythonでの自動化やWebスクレイピング、DjangoでのAPI開発なども行っている。
+          Pythonでの自動化やWebスクレイピング、DjangoやFastAPIでのAPI開発なども行っています。
         </p>
-        <p className="py-2">好きなものはプログラミング、米津玄師、猫。</p>
+        <p className="py-2">趣味はプログラミングと米津玄師です。</p>
       </div>
 
       <p>
