@@ -27,7 +27,7 @@ const BlogIndexPage: NextPage<Props> = (props) => {
         {props.blogs.contents.map((blog, index) => {
           return (
             <li key={index}>
-              <BlogCard blog={blog} />;
+              <BlogCard blog={blog} />
             </li>
           );
         })}
