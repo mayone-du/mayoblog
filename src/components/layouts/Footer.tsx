@@ -44,10 +44,10 @@ export const Footer: React.VFC = memo(() => {
           </h4>
           <ul className="text-sm text-blue-600 underline dark:to-blue-400">
             <li className="mb-2">
-              <a href="/">Twitter</a>
+              <a href="https://twitter.com/mayo1201blog">Twitter</a>
             </li>
             <li className="mb-2">
-              <a href="/">GitHub</a>
+              <a href="https://github.com/mayone-du">GitHub</a>
             </li>
           </ul>
         </div>
