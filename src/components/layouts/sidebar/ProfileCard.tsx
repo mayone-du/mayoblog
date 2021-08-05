@@ -9,9 +9,9 @@ export const ProfileCard: React.VFC = memo(() => {
         <Image
           width={70}
           height={70}
-          blurDataURL="/images/sample-image.jpg"
+          blurDataURL="/images/profile.jpg"
           placeholder="blur"
-          src="/images/sample-image.jpg"
+          src="/images/profile.jpg"
           objectFit="cover"
           className="rounded-full"
         />
