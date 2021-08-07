@@ -2,7 +2,10 @@ import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import { memo } from "react";
 
-export const BreadCrumb: React.VFC = memo(() => {
+type Props = {
+  breadCrumb?: string[];
+};
+export const BreadCrumb: React.VFC<Props> = memo((props) => {
   const router = useRouter();
   const currentPagePath = router.asPath;
 
@@ -20,7 +23,7 @@ export const BreadCrumb: React.VFC = memo(() => {
                 <a className="block text-blue-600">HOME</a>
               </Link>
             </li>
-            <li className="ml-6 font-bold">{currentPagePath}</li>
+            <li className="ml-6 font-bold">{props.breadCrumb}</li>
           </>
         )}
       </ul>

@@ -4,7 +4,7 @@ import { SearchForm } from "src/components/layouts/sidebar/SearchForm";
 
 const SearchIndexPage: NextPage = () => {
   return (
-    <Layout meta={{ pageName: "検索" }}>
+    <Layout meta={{ pageName: "検索" }} breadCrumb={["検索"]}>
       <SearchForm />
     </Layout>
   );

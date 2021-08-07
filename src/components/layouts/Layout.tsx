@@ -12,6 +12,8 @@ type Props = {
     description?: string;
     ogImagePath?: string;
   };
+  // パンくずリストを表示するためにpageからlayoutをとおしてBreadCrumbへ
+  breadCrumb?: string[];
 };
 
 export const Layout: React.FC<Props> = (props) => {
@@ -74,7 +76,7 @@ export const Layout: React.FC<Props> = (props) => {
       </Head>
       <Header />
       <BottomNavigation />
-      <BreadCrumb />
+      <BreadCrumb breadCrumb={props.breadCrumb} />
       <div className="lg:flex px-4 lg:px-64 pb-8 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-800">
         <main className="block p-4 lg:mr-4 lg:w-2/3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 shadow-sm">
           {props.children}

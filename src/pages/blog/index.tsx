@@ -21,7 +21,7 @@ type Props = {
 };
 const BlogIndexPage: NextPage<Props> = (props) => {
   return (
-    <Layout meta={{ pageName: "ブログ一覧" }}>
+    <Layout meta={{ pageName: "ブログ一覧" }} breadCrumb={["ブログ"]}>
       <Headline1 text="ブログ一覧" />
       <ul>
         {props.blogs.contents.map((blog, index) => {

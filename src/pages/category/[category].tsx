@@ -36,6 +36,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
       meta={{
         pageName: "",
       }}
+      breadCrumb={["カテゴリー", `${props.category}`]}
     >
       <Headline1 text={`${props.category}のカテゴリー一覧`} />
       {props.blogs.contents.length === 0 ? (

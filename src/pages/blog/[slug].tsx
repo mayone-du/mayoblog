@@ -64,6 +64,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
         description: props.blogDetail.description,
         ogImagePath: props.blogDetail.image.url,
       }}
+      breadCrumb={["ブログ", props.blogDetail.title]}
     >
       <div>
         {/* タイトル */}

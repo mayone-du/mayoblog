@@ -20,7 +20,7 @@ type Props = {
 };
 const TagIndexPage: NextPage<Props> = (props) => {
   return (
-    <Layout meta={{ pageName: "タグ一覧" }}>
+    <Layout meta={{ pageName: "タグ一覧" }} breadCrumb={["タグ一覧"]}>
       <Headline1 text="タグ一覧" />
       <ul className="pl-4 list-disc">
         {props.tags.contents.map((tag, index) => {

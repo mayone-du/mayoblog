@@ -17,7 +17,10 @@ type Props = {
 };
 const ProfilePage: NextPage<Props> = (props) => {
   return (
-    <Layout meta={{ pageName: "まよねーづのプロフィール詳細 | まよブログ" }}>
+    <Layout
+      meta={{ pageName: "まよねーづのプロフィール詳細 | まよブログ" }}
+      breadCrumb={["プロフィール"]}
+    >
       <Headline1 text={props.profile.title} />
       <article
         dangerouslySetInnerHTML={{

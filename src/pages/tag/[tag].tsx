@@ -36,8 +36,9 @@ const BlogDetailPage: NextPage<Props> = (props) => {
       meta={{
         pageName: "",
       }}
+      breadCrumb={["タグ", `${props.tag}`]}
     >
-      <Headline1 text={`${props.tag}のタグ一覧`} />
+      <Headline1 text={`${props.tag}のタグが付く記事一覧`} />
 
       {props.blogs.contents.length === 0 ? (
         <div>記事がありませんでした。</div>

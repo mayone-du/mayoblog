@@ -18,7 +18,10 @@ const ResultsPage: NextPage = () => {
     })();
   }, [searchKeyword]);
   return (
-    <Layout meta={{ pageName: `${searchKeyword}の検索結果` }}>
+    <Layout
+      meta={{ pageName: `${searchKeyword}の検索結果` }}
+      breadCrumb={[`${searchKeyword}の検索結果`]}
+    >
       <Headline1 text={`${searchKeyword}の検索結果一覧`} />
       <ul>
         {results?.contents.map((blog, index) => {
