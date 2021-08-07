@@ -18,12 +18,35 @@ export const BreadCrumb: React.VFC<Props> = memo((props) => {
         ) : (
           <>
             {/* ホーム以外の場合 */}
-            <li className="relative before:absolute before:top-1/2 before:left-14 before:w-2 before:h-2 before:border-r-2 before:border-b-2 before:border-black dark:before:border-white before:transform before:-rotate-45 before:-translate-x-1/2 before:-translate-y-1/2">
+            {/* <li className="relative before:absolute before:top-1/2 before:left-14 before:w-2 before:h-2 before:border-r-2 before:border-b-2 before:border-black dark:before:border-white before:transform before:-rotate-45 before:-translate-x-1/2 before:-translate-y-1/2"> */}
+            <li className="">
               <Link href="/">
                 <a className="block text-blue-600">HOME</a>
               </Link>
             </li>
-            <li className="ml-6 font-bold">{props.breadCrumb}</li>
+            {/* パンくずリストがある場合 */}
+            {props.breadCrumb &&
+              props.breadCrumb.map((item, index) => {
+                return (
+                  <li className="flex items-center" key={index}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                    <div>{item}</div>
+                  </li>
+                );
+              })}
           </>
         )}
       </ul>
