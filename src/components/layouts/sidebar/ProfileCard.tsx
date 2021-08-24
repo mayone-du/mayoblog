@@ -63,9 +63,15 @@ export const ProfileCard: React.VFC = memo(() => {
           主にWeb系の学習をしており、TypeScriptやNext.js,GraphQLを用いたフロントエンド開発が得意です。
         </p>
         <p className="py-2">
-          Pythonでの自動化やWebスクレイピング、DjangoやFastAPIでのAPI開発なども行っています。
+          PythonでのWebスクレイピング、DjangoやFastAPIでのGraphQL
+          API開発などもちょろっとやっています。
         </p>
-        <p className="py-2">趣味はプログラミングと米津玄師です。</p>
+        <p className="py-2">
+          趣味はプログラミングと米津玄師です。好きなキーボードはHHKB。Vimにも手を出し始めました
+          <span role="img" aria-label="-_-">
+            😑
+          </span>
+        </p>
       </div>
 
       <p>

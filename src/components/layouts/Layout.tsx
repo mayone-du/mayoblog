@@ -75,11 +75,7 @@ export const Layout: React.FC<Props> = (props) => {
         <link rel="manifest" href="/pwa/manifest.json" />
 
         {/* GoogleAnalytics */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2196187831807729"
-          crossOrigin="anonymous"
-        ></script>
+        {/* ... */}
       </Head>
       <Header />
       <BottomNavigation />
