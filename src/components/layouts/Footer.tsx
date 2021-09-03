@@ -9,7 +9,7 @@ export const Footer: React.VFC = memo(() => {
           <h4 className="py-1 pl-2 mb-4 font-bold border-l-4 border-black dark:border-white">
             サイト一覧
           </h4>
-          <ul className="text-sm text-blue-600 underline dark:to-blue-400">
+          <ul className="text-sm text-black dark:text-white underline">
             <li className="mb-2">
               <Link href="/">
                 <a>ホーム</a>
@@ -42,7 +42,7 @@ export const Footer: React.VFC = memo(() => {
           <h4 className="py-1 pl-2 mb-4 font-bold border-l-4 border-black dark:border-white">
             SNS
           </h4>
-          <ul className="text-sm text-blue-600 underline dark:to-blue-400">
+          <ul className="text-sm text-black dark:text-white underline">
             <li className="mb-2">
               <a href="https://twitter.com/mayo1201blog">Twitter</a>
             </li>
