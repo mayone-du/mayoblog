@@ -4,7 +4,7 @@ import { Layout } from "src/components/layouts/Layout";
 import { Headline1 } from "src/components/utils/Headline1";
 import type { Blogs } from "src/types/types";
 
-import { client } from "../libs/client/client";
+import { client } from "../../libs/client/client";
 
 export const getStaticProps: GetStaticProps = async () => {
   const blogs: Blogs = await client.get({ endpoint: "blogs" });
