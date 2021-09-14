@@ -21,7 +21,7 @@ Router.events.on("routeChangeError", () => {
 
 const App = (props: AppProps) => {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="light">
       <props.Component {...props.pageProps} />
       <Toaster toastOptions={{ duration: 2500 }} />
     </ThemeProvider>
