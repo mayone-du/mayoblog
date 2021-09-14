@@ -3,21 +3,23 @@ import "nprogress/nprogress.css";
 import "src/styles/global.css";
 
 import type { AppProps } from "next/app";
+import Router from "next/router";
 import { ThemeProvider } from "next-themes";
-import nprogress from "nprogress";
-import { useEffect } from "react";
+import NProgress from "nprogress";
 import { Toaster } from "react-hot-toast";
 
-nprogress.configure({ showSpinner: false, speed: 400, minimum: 0.25 });
+NProgress.configure({ showSpinner: false, speed: 400, minimum: 0.25 });
+Router.events.on("routeChangeStart", () => {
+  return NProgress.start();
+});
+Router.events.on("routeChangeComplete", () => {
+  return NProgress.done();
+});
+Router.events.on("routeChangeError", () => {
+  return NProgress.done();
+});
 
 const App = (props: AppProps) => {
-  if (process.browser) {
-    nprogress.start();
-  }
-  useEffect(() => {
-    nprogress.done();
-  });
-
   return (
     <ThemeProvider attribute="class">
       <props.Component {...props.pageProps} />
